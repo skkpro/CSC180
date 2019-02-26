@@ -1,0 +1,30 @@
+https://www.dotnetperls.com/2d
+2D Array Examples - Dotnetperls
+Length-based loop -The fastest method for a 2D array is to do some arithmetic. 
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[,] words = new string[,]  // given the 2D array string words
+        {
+            {"ONE", "TWO"},
+            {"THREE", "FOUR"},
+            {"FIVE", "SIX"}                //it's length of the words are 6. 2 colums * 3 rows
+        };
+
+        // Loop based on length.
+        // ... Assumes each subarray is two elements long.
+        for (int i = 0; i < words.Length / 2; i++)  // for loop to find out how many rows there are in the strings.
+        {
+            string s1 = words[i, 0];
+            string s2 = words[i, 1];
+            Console.WriteLine("{0}, {1}", s1, s2);
+        }
+    }
+}
+
+This is faster than GetUpperBound method, simple to use.
