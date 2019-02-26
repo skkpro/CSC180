@@ -1,0 +1,101 @@
+https://www.dotnetperls.com/2d
+Add row, Add column
+This example is basic concept of adding rows and columns in 2D Array.
+
+using System;
+
+class Program
+{
+    static int[,] AddRow(int[,] original, int[] added)  //this is for addrow method
+    {
+        int lastRow = original.GetUpperBound(0);
+        int lastColumn = original.GetUpperBound(1);
+        // Create new array.
+        int[,] result = new int[lastRow + 2, lastColumn + 1];
+        // Copy existing array into the new array.
+        for (int i = 0; i <= lastRow; i++)
+        {
+            for (int x = 0; x <= lastColumn; x++)    // Nested for loops to use two variables for the result
+            {
+                result[i, x] = original[i, x];
+            }
+        }
+        // Add the new row.
+        for (int i = 0; i < added.Length; i++)
+        {
+            result[lastRow + 1, i] = added[i];
+        }
+        return result;
+    }
+
+    static int[,] AddColumn(int[,] original, int[] added)
+    {
+        int lastRow = original.GetUpperBound(0);
+        int lastColumn = original.GetUpperBound(1);
+        // Create new array.
+        int[,] result = new int[lastRow + 1, lastColumn + 2];
+        // Copy the array.
+        for (int i = 0; i <= lastRow; i++)
+        {
+            for (int x = 0; x <= lastColumn; x++)  // Nested for loops to use two variables for the result
+            {
+                result[i, x] = original[i, x];
+            }
+        }
+        // Add the new column.
+        for (int i = 0; i < added.Length; i++)
+        {
+            result[i, lastColumn + 1] = added[i];
+        }
+        return result;
+    }
+
+    static void Display(int[,] array)
+    {
+        // Loop over 2D int array and display it.
+        for (int i = 0; i <= array.GetUpperBound(0); i++)
+        {
+            for (int x = 0; x <= array.GetUpperBound(1); x++)
+            {
+                Console.Write(array[i, x]);
+                Console.Write(" ");
+            }
+            Console.WriteLine();
+        }
+    }
+
+    static void Main()  // after creating methods, now it is time to test it out, adding rows and columns
+    {
+        int[,] values = { { 10, 20 }, { 30, 40 } };
+        Console.WriteLine("CURRENT");
+        Display(values);
+
+        // Add row and display the new array.
+        int[,] valuesRowAdded = AddRow(values,
+            new int[] { 50, 60 });
+        Console.WriteLine("ADD ROW");
+        Display(valuesRowAdded);
+
+        // Add column and display the new array.
+        int[,] valuesColumnAdded = AddColumn(valuesRowAdded,
+            new int[] { -1, -2, -3 });
+        Console.WriteLine("ADD COLUMN");
+        Display(valuesColumnAdded);
+    }
+}
+
+
+OUTPUT
+CURRENT
+10 20
+30 40
+ADD ROW
+10 20
+30 40
+50 60
+ADD COLUMN
+10 20 -1
+30 40 -2
+50 60 -3
+
+This is the last section for the 2D array, pretty hard, pretty simple. mostly used two nested for loops. After creating methods, we use Main method to proceed with the method.
