@@ -1,0 +1,28 @@
+This is from (https://www.dotnetperls.com/2d) 
+Basic understanding of 2D array.
+GetupperBound. - This method receives the highest indes of the specified rank. 
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[,] codes = new string[,]  //[,] indicates string is 2d array
+        {
+            {"AA", "BB"},
+            {"CC", "DD"}
+        };
+
+        // Get the upper bound.
+        // ... Use for-loop over rows.
+        for (int i = 0; i <= codes.GetUpperBound(0); i++)  //GetUpperBound(0) means i is equal to first column to the last column which will be 0 and 1
+        {
+            string s1 = codes[i, 0];
+            string s2 = codes[i, 1];
+            Console.WriteLine("{0}, {1}", s1, s2); // this basically saying Console.WriteLine([0,0] [0,1]) and Console.WriteLine([1,0] [1,1]) 
+        }
+    }
+}
+
+during this example I learned how to use the GetUpperBound function in 2D array. 
