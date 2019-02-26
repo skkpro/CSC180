@@ -1,0 +1,28 @@
+This is from (https://www.dotnetperls.com/2d) 
+Basic understanding of 2D array.
+
+using System;
+
+class Program
+{
+  static void Main()
+  {
+    string[,] array = new string [,]            //[,] indicates that this string is 2D
+    {
+      {"cat","dog"}
+      {"bird","fish"}
+    }
+    Console.WriteLine(array[0,0]);
+    Console.WriteLine(array[0,1]);
+    Console.WriteLine(array[1,0]);
+    Console.WriteLine(array[1,1]);
+  }
+}
+
+Output
+cat
+dog
+bird
+fish
+
+//this is basic of 2D array to print out the values in the 2D array 
