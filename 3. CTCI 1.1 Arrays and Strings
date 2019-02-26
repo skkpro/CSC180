@@ -1,0 +1,45 @@
+/* This Question is from the book "Cracking the Coding Interview" by Gayle Laakmann Mcdowell
+
+Question 1.1 
+Is Unique : Implement an algorithm to determine if a string has all unique characters. What if you cannot use additional data structures?
+
+A: 
+
+boolean isUniqueChars(String str) //because we are using algorithm to determine if a string has all unique we use boolean function.
+{
+  if (str.length() > 128) return false; // this shows that if length is longer than a alphabet it is no longer true. 
+  
+  boolean[] char_set = new boolean[128] // we set array length as alphabet length
+  for (int i = 0; i < str.length(); i++) // for loop to check every single letter in the string
+    {
+    int val = str.charAt(i); // setting where i is, that is where value is looked at
+    if (char_set[val]) // if you already found this char in string, return false
+      {
+      return false
+      }
+    char_set[val] = true // else return true.
+    }
+   return true;
+}
+
+-------------------------------------------------------------
+
+Here is modified version
+
+boolean isUniqueChars(String str)
+{
+  int checker = 0;
+  for (int i = 0; i < str.length(); i++)
+    {
+    int val = str.charAt(i) - 'a';
+    if((checker & (1 << val)) > 0) 
+      {
+       return false;
+      }
+    checker |= (1 << val);
+    }
+   return true;
+}
+
+The modified version reduce the space usage by factor of eight by using a bit vector. but with this we have to assume that string is only lowercase letters.
+
