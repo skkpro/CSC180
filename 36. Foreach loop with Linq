@@ -1,0 +1,30 @@
+//https://www.dotnetperls.com/foreach
+// When you use System.Linq, you can easily sort the array.
+
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        // An unsorted string array.
+        string[] letters = { "d", "c", "a", "b" };
+        // Use LINQ query syntax to sort the array alphabetically.
+        var sorted = from letter in letters //almost like SQL
+                     orderby letter
+                     select letter;
+        // Loop with the foreach keyword.
+        foreach (string value in sorted) 
+        {
+            Console.WriteLine(value);
+        }
+    }
+}
+
+Output
+
+a
+b
+c
+d
