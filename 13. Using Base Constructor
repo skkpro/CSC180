@@ -1,0 +1,37 @@
+//https://www.dotnetperls.com/constructor
+//
+
+
+using System;
+
+public class Bird
+{
+    public Bird(int value) //built base constructor. 
+    {
+        Console.WriteLine($"Bird() called with {value}"); // this is attribute of the base 'Bird' constructor
+    }
+}
+
+public class Parrot : Bird //Dervied constructor that is based on Bird constructor
+{
+    public Parrot(int value) : base(value)
+    {
+        Console.WriteLine($"Parrot called with {value}"); //adding a new value to Parrot derived constructor Bird
+    }
+}
+
+class Program
+{
+    static void Main() 
+    {
+        Parrot parrot = new Parrot(450); //using main to call the constructor Parrot
+        Console.WriteLine(":::DONE:::");
+    }
+}
+
+Output
+Bird() called with 450
+Parrot called with 450
+:::DONE:::
+
+// on the output, both constructor's attributes comes out
