@@ -1,0 +1,47 @@
+//https://www.dotnetperls.com/duplicates
+//Removing duplicate by using boolean function
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static List<string> RemoveDuplicatesIterative(List<string> items)  //making a constructor for removing duplicate.
+    {
+        List<string> result = new List<string>(); //instance for a array string
+        for (int i = 0; i < items.Count; i++)  // for loop for each items in the string
+        {
+            // Assume not duplicate.
+            bool duplicate = false; // if duplicated string than its not true
+            for (int z = 0; z < i; z++) //z is equal to i
+            {
+                if (items[z] == items[i])
+                {
+                    // This is a duplicate.
+                    duplicate = true;
+                    break;
+                }
+            }
+            // If not duplicate, add to result. // if it is not a duplicate, then add it to the array.
+            if (!duplicate)
+            {
+                result.Add(items[i]);
+            }
+        }
+        return result;
+    }
+
+    static void Main()
+    {
+        // Call method with this input.
+        List<string> input = new List<string>() { "x", "x", "y", "y", "y", "z" };
+        List<string> output = RemoveDuplicatesIterative(input);
+        Console.WriteLine("Input: " + string.Join(",", input));
+        Console.WriteLine("Output: " + string.Join(",", output));
+    }
+}
+
+Output
+
+Input: x,x,y,y,y,z
+Output: x,y,z
