@@ -1,0 +1,40 @@
+//https://www.dotnetperls.com/dictionary
+// In This section, example will show how to call a dictionary with a foreach loop.
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<string, int> data = new Dictionary<string, int>()
+        {
+            {"cat", 2},
+            {"dog", 1},
+            {"llama", 0},
+            {"iguana", -1}
+        };
+        // Loop over pairs with foreach.
+        foreach (KeyValuePair<string, int> pair in data) //foreach loop will go thorugh every single pair in the Dictionary.
+        {
+            Console.WriteLine("FOREACH KEYVALUEPAIR: {0}, {1}", pair.Key, pair.Value);
+        }
+        // Use var keyword to enumerate Dictionary.
+        foreach (var pair in data) // Samething with KeyValuePair but instead, we can just sawy var pair.
+        {
+            Console.WriteLine("FOREACH VAR: {0}, {1}", pair.Key, pair.Value);
+        }
+    }
+}
+
+Output
+
+FOREACH KEYVALUEPAIR: cat, 2
+FOREACH KEYVALUEPAIR: dog, 1
+FOREACH KEYVALUEPAIR: llama, 0
+FOREACH KEYVALUEPAIR: iguana, -1
+FOREACH VAR: cat, 2
+FOREACH VAR: dog, 1
+FOREACH VAR: llama, 0
+FOREACH VAR: iguana, -1
