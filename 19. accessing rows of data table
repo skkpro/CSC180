@@ -1,0 +1,35 @@
+//https://www.dotnetperls.com/datatable
+// In this example you can see how to call the rows
+
+
+//using data table from Example back in 18. Datatable 
+C# program that uses Rows, Field
+
+using System;
+using System.Data;
+
+class Program
+{
+    static void Main()
+    {
+        // This uses the GetTable method (please paste it in).
+        DataTable data = GetTable();
+
+        // ... Loop over all rows.
+        foreach (DataRow row in data.Rows)
+        {
+            // ... Write value of first field as integer.
+            Console.WriteLine(row.Field<int>(0));
+        }
+    }
+}
+
+Output
+
+25
+50
+10
+21
+100
+
+// you call the value of rows by using (row.Field<int>(0))
