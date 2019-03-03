@@ -1,0 +1,42 @@
+//https://www.dotnetperls.com/parse
+//For int.Parse it will convert string text to a int.
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Convert string to number.
+        string text = "500";
+        int num = int.Parse(text); //int.Parse will change string to int.
+        Console.WriteLine(num);
+    }
+}
+
+Output
+
+500
+
+-------------------------------------
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string input = "carrot";
+        // ... This will throw an exception.
+        int carrots = int.Parse(input);
+        Console.WriteLine(carrots);
+    }
+}
+
+Output
+
+Unhandled Exception: System.FormatException:
+Input string was not in a correct format.
+   at System.Number.StringToNumber(String str, NumberStyles options, ...
+   at System.Number.ParseInt32(String s, NumberStyles style, ...
+   
+   //its giving the int.Parse(input error) due to the string is not a number.
