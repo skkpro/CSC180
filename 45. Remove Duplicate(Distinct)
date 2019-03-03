@@ -1,0 +1,49 @@
+//https://www.dotnetperls.com/duplicates
+//Removing Duplicate with using Distinct
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        // List with duplicate elements.
+        List<int> list = new List<int>(); //adding a duplicate elements.
+        list.Add(1);
+        list.Add(2);
+        list.Add(3);
+        list.Add(3);
+        list.Add(4);
+        list.Add(4);
+        list.Add(4);
+
+        foreach (int value in list)
+        {
+            Console.WriteLine("Before: {0}", value);
+        }
+
+        // Get distinct elements and convert into a list again.
+        List<int> distinct = list.Distinct().ToList(); //making distinct before adding it to foreach loop.
+
+        foreach (int value in distinct)
+        {
+            Console.WriteLine("After: {0}", value); //get a value foreach int in distinct
+        }
+    }
+}
+
+Output
+
+Before: 1
+Before: 2
+Before: 3
+Before: 3
+Before: 4
+Before: 4
+Before: 4
+After: 1
+After: 2
+After: 3
+After: 4
