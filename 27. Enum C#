@@ -1,0 +1,36 @@
+//https://www.dotnetperls.com/enum
+//using Enum
+
+using System;
+
+class Program
+{
+    enum Importance // list of importance, attributes
+    {
+        None,
+        Trivial,
+        Regular,
+        Important,
+        Critical
+    }
+
+    static void Main()
+    {
+        // ... An enum local variable.
+        Importance value = Importance.Critical; //Creating instance of value - giving critical as a value. (with enum you can call it like enumname.attribute
+
+        // ... Test against known Importance values.
+        if (value == Importance.Trivial) //if value is trivial then return not true
+        {
+            Console.WriteLine("Not true");
+        }
+        else if (value == Importance.Critical) // if value is critical, return true. 
+        {
+            Console.WriteLine("True");
+        }
+    }
+}
+
+Output
+
+True
