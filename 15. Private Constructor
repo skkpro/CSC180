@@ -1,0 +1,41 @@
+//https://www.dotnetperls.com/constructor
+//Private constructor. A private constructor cannot be externally called. It can ensure higher-quality code. 
+//It forces the class to provide a controlled and unified access pattern.
+
+Example:
+//The private constructor ensures that it is impossible for the class to be instantiated directly from external classes.
+
+using System;
+
+public sealed class Test
+{
+    public static readonly Test Instance = new Test(); // Singleton pattern.
+    public int A; // Instance field.
+    private Test() // This is the private constructor.
+    {
+        this.A = 5;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // We can access an instance of this object that was created.
+        // ... The private constructor was used.
+        Test test = Test.Instance;
+
+        // Use the class instance.
+        Console.WriteLine(test.A);
+        test.A++;
+        Console.WriteLine(test.A);
+    }
+}
+
+Output
+
+5
+6
+
+// To use a private constructor, simply give private as access modifier. 
+// Then it is impossible for the class to be instantiated directly from external classes.
