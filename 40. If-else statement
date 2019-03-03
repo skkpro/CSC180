@@ -1,0 +1,39 @@
+//https://www.dotnetperls.com/if
+//If else statement
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine(A(5));
+        Console.WriteLine(B(4));
+    }
+
+    static bool A(int y)
+    {
+        if (y >= 5) // if y is equal or bigger than 5
+        {
+            return true; // return true
+        }
+        else // if not then return false
+        {
+            return false;
+        }
+    }
+
+    static bool B(int y)
+    {
+        if (y >= 5)
+        {
+            return true;
+        }
+        return false; //you can omit the else statment like this.
+    }
+}
+
+Output
+
+True
+False
