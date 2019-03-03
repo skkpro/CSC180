@@ -1,0 +1,21 @@
+//https://www.dotnetperls.com/console
+//Multiple values in Console.Writeline
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string value1 = "Dot";
+        string value2 = "Net";
+        string value3 = "Perls";
+
+        Console.WriteLine("{0}, {1}, {2}",
+            value1,
+            value2,
+            value3);
+            // you can give numbers of values after {0} index number, which will write the values in Console.WriteLine
+    }
+}
