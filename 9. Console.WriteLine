@@ -1,0 +1,26 @@
+//https://www.dotnetperls.com/console
+// This is about basic concept of Console.WriteLine();
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Write an int with Console.WriteLine.
+        int valueInt = 4;
+        Console.WriteLine(valueInt);
+
+        // Write a string with the method.
+        string valueString = "Your string";
+        Console.WriteLine(valueString);
+
+        // Write a bool with the method.
+        bool valueBool = false;
+        Console.WriteLine(valueBool);
+    }
+}
+
+// instead of giving actual string "write this , or write that"
+// after giving instance name of the data value, you can input that instance in the Console.WriteLine(instance) to 
+// wrtie the data in the console.
