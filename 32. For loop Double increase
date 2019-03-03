@@ -1,0 +1,26 @@
+//https://www.dotnetperls.com/for
+//Same with basic for loop, but instead of increasing by one. now we are increasing it by 2
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        for (int i = 0; i < 10; i += 2) //for every loop going through, increase it by 2.
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+
+Output
+
+0
+2
+4
+6
+8
+
+//we can use this to write even numbers till number. basic concept, but can be used for harder questions.
