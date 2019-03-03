@@ -1,0 +1,25 @@
+//https://www.dotnetperls.com/foreach
+// Same with for loop, foreach loop will go through every single items in the loop. But it is little different
+
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] pets = { "dog", "cat", "bird" }; //here is the set of the array, for string[] pets
+
+        // ... Loop with the foreach keyword.
+        foreach (string value in pets) //when you are getting string you simply write (data type instance in array name)
+        {
+            Console.WriteLine("FOREACH ITEM: " + value); // write all the value + string added infront
+        }
+    }
+}
+
+Output
+
+FOREACH ITEM: dog
+FOREACH ITEM: cat
+FOREACH ITEM: bird
