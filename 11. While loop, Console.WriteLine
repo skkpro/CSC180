@@ -1,0 +1,33 @@
+//https://www.dotnetperls.com/console
+//
+
+
+using System;
+using System.Threading;
+
+class Program
+{
+    static void Main()
+    {
+        while (true) //creating infinite loop, using while loop. 
+        {
+            Thread.Sleep(1000); //giving a thread of 1 sec for each loop
+            bool capsLock = Console.CapsLock; // when capLock is on, figure out if it is true of false
+            Console.WriteLine(capsLock); //this is actual writing part where its going to write bool value
+        }
+    }
+}
+
+
+Output
+
+False
+False
+True
+True
+True
+False
+True
+True
+
+// with this I learned about While loop( infinite) and how to use thread.
