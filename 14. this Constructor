@@ -1,0 +1,39 @@
+//https://www.dotnetperls.com/constructor
+// using This constructor
+
+using System;
+
+class Mouse
+{
+    public Mouse() : this(-1, "") //giving a initializer for the constructor
+    {
+        // Uses constructor initializer.
+    }
+
+    public Mouse(int weight, string name) //regular constructor.
+    {
+        // Constructor implementation.
+        Console.WriteLine("Constructor weight = {0}, name = {1}",
+            weight,
+            name);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Test the 2 constructors for Mouse type.
+        Mouse mouse1 = new Mouse(); 
+        //reason why we gave this constructor. When a user doesnt give a value to the constructor, system will
+        //automatically call the constructor: this and give the value with it.
+        
+        Mouse mouse2 = new Mouse(10, "Sam");
+    }
+}
+
+Output
+
+Constructor weight = -1, name =  //value from this constructor.
+Constructor weight = 10, name = Sam
+
