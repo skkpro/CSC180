@@ -1,0 +1,30 @@
+//https://www.dotnetperls.com/dictionary
+//This section will show how can we search for the key, once we put the values in the dictionary.
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<string, int> dictionary = new Dictionary<string, int>();
+
+        dictionary.Add("apple", 1);
+        dictionary.Add("windows", 5);
+
+        // See whether Dictionary contains this string.
+        if (dictionary.ContainsKey("apple")) //If in the dictionary there is a word "apple"
+        {
+            int value = dictionary["apple"]; // Then write the int value of the apple.
+            Console.WriteLine(value);
+        }
+
+        // See whether it contains this string.
+        if (!dictionary.ContainsKey("acorn")) //If in the dictionary there is not a word "acorn"
+        {
+            Console.WriteLine(false); // Then return false
+        }
+    }
+}
+
