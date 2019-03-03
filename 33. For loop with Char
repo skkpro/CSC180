@@ -1,0 +1,27 @@
+//https://www.dotnetperls.com/for
+//instead of using int i , now we are using char c
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // ... Loop over character range.
+        for (char c = 'a'; c <= 'z'; c++) //for char c, starting at lowercase a to all the way to the z, increase it by one letter
+        {
+            Console.WriteLine(c);
+        }
+    }
+}
+
+Output
+
+a
+b
+c
+d
+e....
+
+//You can use char with lower case or upper case. 
+//if written, char c = 'A'; c <= 'Z' ; c++) than thre loop will return upper case
