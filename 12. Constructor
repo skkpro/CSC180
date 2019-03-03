@@ -1,0 +1,23 @@
+//https://www.dotnetperls.com/constructor
+//This is basic concept of the contructor
+
+
+class Widget
+{
+    int _size;
+    public Widget(int size) //this is a contructor that was built in the class of Widget
+    {
+        this._size = size;
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Widget widget1 = new Widget(10); //calling a contructor that was built on class Widget.
+        Widget widget2 = new Widget(20); //calling a contructor that was built on class Widget.
+    }
+}
+
+//Baisic concept of the contructor.
