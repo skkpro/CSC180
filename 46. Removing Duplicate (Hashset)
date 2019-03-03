@@ -1,0 +1,39 @@
+//https://www.dotnetperls.com/duplicates
+//Using HashSet
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    public static List<string> RemoveDuplicatesSet(List<string> items) // making a function for removing duplicate
+    {
+        // Use HashSet to maintain table of duplicates encountered.
+        var result = new List<string>(); // for a list of string, result = instance
+        var set = new HashSet<string>(); // Hashset(distinct list) = set
+        for (int i = 0; i < items.Count; i++) // for how many items in the string list
+        {
+            // If not duplicate, add to result.
+            if (!set.Contains(items[i])) //if is not duplicate
+            {
+                result.Add(items[i]); // add it to the list
+                // Record as a future duplicate.
+                set.Add(items[i]);
+            }
+        }
+        return result;
+    }
+
+    static void Main()
+    {
+        var input = new List<string>() { "a", "b", "a", "b", "b", "b", "c" };
+        var output = RemoveDuplicatesSet(input);
+        Console.WriteLine("Input: " + string.Join(",", input));
+        Console.WriteLine("Output: " + string.Join(",", output));
+    }
+}
+
+Output
+
+Input: a,b,a,b,b,b,c
+Output: a,b,c
