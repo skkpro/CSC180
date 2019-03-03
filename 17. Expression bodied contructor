@@ -1,0 +1,28 @@
+//https://www.dotnetperls.com/constructor
+//Expression bodied Constructor
+
+using System;
+
+class Dog
+{
+    int paws;
+    // Expression-bodied constructor.
+    // ... Do not use parentheses around the right side.
+    public Dog() => paws = 4; // giving attribute to public Dog
+    // Expression-bodied property.
+    public int Paws { get => paws; }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Dog dog = new Dog();
+        // Use property to get value of paws.
+        Console.WriteLine(dog.Paws); //calling the expression bodied constructor.
+    }
+}
+
+Output
+
+4
