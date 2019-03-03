@@ -1,0 +1,44 @@
+//https://www.dotnetperls.com/foreach
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Array of color strings.
+        string[] colors = { "red", "orange", "yellow", "green" };
+
+        // Print all colors with for-loop.
+        Console.WriteLine(":::FOR:::");
+        for (int i = 0; i < colors.Length; i++)
+        {
+            // Assign string reference based on induction variable.
+            string value = colors[i];
+            Console.WriteLine(value);
+        }
+
+        // Print all colors with for each.
+ -------------------------------------------------------------------
+        Console.WriteLine(":::FOREACH:::");
+        foreach (var value in colors)
+        {
+            Console.WriteLine(value);
+        }
+    }
+}
+
+Output
+
+:::FOR:::
+red
+orange
+yellow
+green
+:::FOREACH:::
+red
+orange
+yellow
+green
+
+// we can see that both for loop and foreach loop gives same output.
