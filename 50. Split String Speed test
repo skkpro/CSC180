@@ -1,0 +1,82 @@
+//https://www.dotnetperls.com/split
+
+using System;
+using System.Diagnostics;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    const int _max = 100000;
+    static void Main()
+    {
+        // Get long string.
+        string value1 = string.Empty;
+        for (int i = 0; i < 120; i++)
+        {
+            value1 += "01234567\r\n";
+        }
+        // Get short string.
+        string value2 = string.Empty;
+        for (int i = 0; i < 10; i++)
+        {
+            value2 += "ab\r\n";
+        }
+        // Put strings in array.
+        string[] tests = { value1, value2 };
+
+        foreach (string test in tests)
+        {
+            Console.WriteLine("Testing length: " + test.Length);
+            // Version 1: use Regex.Split.
+            var s1 = Stopwatch.StartNew();
+            for (int i = 0; i < _max; i++)
+            {
+                string[] result = Regex.Split(test, "\r\n", RegexOptions.Compiled);
+                if (result.Length == 0)
+                {
+                    return;
+                }
+            }
+            s1.Stop();
+            // Version 2: use char array split.
+            var s2 = Stopwatch.StartNew();
+            for (int i = 0; i < _max; i++)
+            {
+                string[] result = test.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                if (result.Length == 0)
+                {
+                    return;
+                }
+            }
+            s2.Stop();
+            // Version 3: use string array split.
+            var s3 = Stopwatch.StartNew();
+            for (int i = 0; i < _max; i++)
+            {
+                string[] result = test.Split(new string[] { "\r\n" }, StringSplitOptions.None);
+                if (result.Length == 0)
+                {
+                    return;
+                }
+            }
+            s3.Stop();
+            Console.WriteLine(((double)(s1.Elapsed.TotalMilliseconds * 1000000) /
+                _max).ToString("0.00 ns"));
+            Console.WriteLine(((double)(s2.Elapsed.TotalMilliseconds * 1000000) /
+                _max).ToString("0.00 ns"));
+            Console.WriteLine(((double)(s3.Elapsed.TotalMilliseconds * 1000000) /
+                _max).ToString("0.00 ns"));
+        }
+    }
+}
+
+Results
+
+Testing length: 1200
+21442.64 ns    Regex.Split //easy, but not recommanded, takes too much time.
+5562.63 ns     Split char[] //fastest split methods
+6556.60 ns     Split string[]
+Testing length: 40
+2236.22 ns     Regex.Split
+371.55 ns      Split char[] // learn how to use this split char[]--- 
+423.46 ns      Split string[]
