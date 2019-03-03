@@ -1,0 +1,36 @@
+//https://www.dotnetperls.com/enum
+//continuation from 27. Enum C#
+
+using System;
+
+class Program
+{
+    enum TagType
+    {
+        None,
+        BoldTag,
+        ItalicsTag,
+        HyperlinkTag,
+    }
+
+    static void Main()
+    {
+        // Specify a tag instance.
+        TagType tagValue = TagType.BoldTag; //creating a instance. named tagValue
+
+        if (tagValue == TagType.BoldTag) // if value is BoldTag = return Bold
+        {
+            // Will be printed.
+            Console.WriteLine("Bold");
+        }
+        if (tagValue == TagType.HyperlinkTag) // if value is HyperlinkTag = return not true
+        {
+            // This is not printed.
+            Console.WriteLine("Not true");
+        }
+    }
+}
+
+Output
+
+Bold
