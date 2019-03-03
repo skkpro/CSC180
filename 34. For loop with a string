@@ -1,0 +1,24 @@
+//https://www.dotnetperls.com/for
+//you can be using for loop with strings as well. 
+
+class Program
+{
+    static void Main()
+    {
+        string value = "Rome";
+        // Use for-loop from 0 through Length of string (goes to last index).
+        for (int i = 0; i < value.Length; i++)
+        {
+            char current = value[i]; // giving instance for the answer.
+            System.Console.WriteLine(current);
+        }
+    }
+}
+
+Output
+
+R
+o
+m
+e
+
