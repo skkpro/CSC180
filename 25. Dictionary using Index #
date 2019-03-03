@@ -1,0 +1,28 @@
+//https://www.dotnetperls.com/dictionary
+//When Dictionary uses the index number for the value this happens.
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<int, int> dictionary = new Dictionary<int, int>();
+
+        // We can assign with the indexer.
+        dictionary[1] = 2;                     //for dictionary[1] = 2 is assgined 
+        dictionary[2] = 1;                     //then next dictionary [2] = 1 is assigned
+        dictionary[1] = 3; // Reassign.        //but when same index number is called below, dictionary will replace the value with lastest one.
+
+        // Read with the indexer.
+        // ... An exception occurs if no element exists.
+        Console.WriteLine(dictionary[1]);
+        Console.WriteLine(dictionary[2]);
+    }
+}
+
+Output
+
+3
+1
