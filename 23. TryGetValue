@@ -1,0 +1,26 @@
+// https://www.dotnetperls.com/dictionary
+// TryGetValue is good way to use if you just want to try to see if there is a value.
+
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<string, string> values = new Dictionary<string, string>();
+
+        values.Add("cat", "feline");
+        values.Add("dog", "canine");
+        // Use TryGetValue.
+        string test;
+        if (values.TryGetValue("cat", out test)) // Returns true. //once it found the value, then it will proceed to what is in the statement below.
+        {
+            Console.WriteLine(test); // This is the value at cat.
+        }
+        if (values.TryGetValue("bird", out test)) // Returns false.  //once we try the value and there is no value found, it will stop.
+        {
+            Console.WriteLine(false); // Not reached.
+        }
+    }
+}
