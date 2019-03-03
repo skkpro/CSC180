@@ -1,0 +1,34 @@
+//https://www.dotnetperls.com/foreach
+// This is about reverse Sort using foreach and system.Linq
+
+
+
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        // An example array.
+        string[] array =
+        {
+            "bird",
+            "frog",
+            "dog",
+            "snake"
+        };
+        // Use the Reverse generic extension method.
+        foreach (string value in array.Reverse()) // just like var sort, array.sort. you can use array.Reverse to have array sorted reverse.
+        {
+            Console.WriteLine("REVERSE VALUE: " + value);
+        }
+    }
+}
+
+Output
+
+REVERSE VALUE: snake
+REVERSE VALUE: dog
+REVERSE VALUE: frog
+REVERSE VALUE: bird
