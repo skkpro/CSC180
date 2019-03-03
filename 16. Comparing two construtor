@@ -1,0 +1,63 @@
+//https://www.dotnetperls.com/constructor
+// comparing test
+
+using System;
+
+class Program
+{
+    class C1
+    {
+        public int A;
+        public int B;
+        public C1()
+        {
+        }
+    }
+
+    static void Main()
+    {
+        C1 c = new C1();
+        c.A = 1;
+        c.B = 2;
+    }
+}
+---------------------------------------------------------------
+using System;
+
+class Program
+{
+    class C2
+    {
+        int A;
+        int B;
+        public C2(int a, int b)
+        {
+            A = a;
+            B = b;
+        }
+    }
+
+    static void Main()
+    {
+        C2 c = new C2(1, 2);
+    }
+}
+------------------------------------------------------------------------------
+Code benchmarked for constructor C1: C#
+
+C1 c = new C1();
+c.A = i;
+c.B = i + 1;
+
+Code benchmarked for constructor C2: C#
+
+C2 c = new C2(i, i + 1);
+
+Results
+
+100000000 iterations were benchmarked.
+
+C1 Assign at caller:       557.6 ms
+C2 Overloaded constructor: 507.6 ms [faster]
+
+// we can see that a contructor with overloaded constuctor process faster.
