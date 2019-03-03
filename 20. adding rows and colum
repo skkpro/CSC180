@@ -1,0 +1,30 @@
+//https://www.dotnetperls.com/datatable
+
+
+using System;
+using System.Data;
+
+class Program
+{
+    static void Main()
+    {
+        // Safely create and dispose of a DataTable.
+        using (DataTable table = new DataTable())
+        {
+            // Two columns.
+            table.Columns.Add("Name", typeof(string));
+            table.Columns.Add("Date", typeof(DateTime));
+
+            // ... Add two rows.
+            table.Rows.Add("cat", DateTime.Now);
+            table.Rows.Add("dog", DateTime.Today);
+
+            // ... Display first field.
+            Console.WriteLine(table.Rows[0].Field<string>(0)); //in the code, it is calling 1st column and 1st row
+        }
+    }
+}
+
+Output
+
+cat
