@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int a = 1; //given value a and b
+        int b = 3;
+
+        // Use negated expression.
+        if (!(a == 1 && b == 2)) // if not (a is 1 and b is 2)
+        {
+            Console.WriteLine(true); //return true
+        }
+
+        // Use binary or version.
+        if (a != 1 || b != 2) // if a is not 1 or b is not 2 then
+        {
+            Console.WriteLine(true); // return true
+        }
+    }
+}
+
+Output
+
+True
+True
